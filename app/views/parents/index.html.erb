@@ -1,0 +1,13 @@
+<h1><center>All Parents</center></h1>
+<hr/>
+
+<% @parents.each do |parent| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 well">
+        <h1><%= parent.firstname + " " + parent.lastname %></h1>  
+        <h4>Phone Number: <%= parent.phone %>
+    </div>
+  </div>
+</div>  
+<% end %>

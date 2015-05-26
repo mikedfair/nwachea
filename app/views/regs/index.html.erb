@@ -1,0 +1,18 @@
+<h1><center>All class Registrations</center></h1>
+<hr/>
+
+<% @regs.each do |reg| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 well">
+        <h1><%= reg.student %></h1>  
+        <h4>First Hour Preferred: <%= reg.firstpri %>
+        <h4>First Hour Alternate: <%= reg.firstalt %>
+        <h4>Second Hour Preferred: <%= reg.secondpri %>
+        <h4>Second Hour Alternate: <%= reg.secondalt %>
+        <h4>Third Hour Preferred: <%= reg.thirdpri %>
+        <h4>Third Hour Alternate: <%= reg.thirdalt %>
+    </div>
+  </div>
+</div>  
+<% end %>

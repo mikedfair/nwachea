@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @subject do |f| %>
+      <%= f.label "Class Name" %>
+      <%= f.text_field :subjectname %>
+
+      <%= f.label "Grade" %>
+      <%= f.select :grade, [['Nursery', 'nursery'],['Toddler', 'toddler'],['Pre-K', 'pre-k'],['K - 2', 'k-2'],['3 - 5', '3-5'],['6 - 8', '6-8'],['6 - 12', '6-12'],['9 - 12', '9-12']], include_blank: true %>
+      
+      <%= f.label "Hour" %>
+      <%= f.select :hour, [['First', 'first'],['Second', 'second'],['Third', 'third']], include_blank: true %>
+      
+      <%= f.label "Cost" %>
+      <%= f.text_field :cost %>
+
+      <%= f.label "Teacher" %>
+      <%= f.text_field :teacher %>
+      
+      <%= f.label "Class Description" %>
+      <%= f.text_area :description %>
+
+      <%= f.submit(@subject.new_record? ? 'Add Class' : 'Edit Class', class: "btn btn-success") %>
+    <% end %>
+  </div>
+</div>

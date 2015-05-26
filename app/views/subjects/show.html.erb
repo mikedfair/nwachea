@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="container">
+    <div class="col-md-2 pull-left center">
+    </div>
+    <div class="col-12-lg">
+      <div class="well">
+        <h1><%= @subject.subjectname %></h1>  
+        <h4>Grade: <%= @subject.grade %></h4>
+        <h4>Hour: <%= @subject.hour %></h4>
+        <h4>Cost: <%= @subject.cost %></h4>
+        <h4>Teacher: <%= @subject.teacher %></h4>
+        <h4>Description: <%= @subject.description %></h4>
+        <%= link_to "Edit", edit_subject_path, class: "btn btn-default pull-right" %></h4>
+      </div>
+    </div>
+  </div>
+</div>
+<% render 'shared/errors', obj: @subject %>

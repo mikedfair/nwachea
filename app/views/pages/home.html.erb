@@ -1,0 +1,50 @@
+<div class="container">
+  
+  <% if @family.errors.any? %>
+    <div class="row">
+      <div class="alert alert-danger col-md-8 col-md-offset-2">
+        <h5>Fix the following errors:</h5>
+          <ul>
+            <% @family.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+      </div>
+    </div> 
+  <% end %>
+  
+  <div class="well col-lg-4 pull-right">
+      <h2><center>Login</center></h2>
+
+      <%= form_tag '/login' do %>
+    
+      <%= label_tag 'Email' %>
+      <%= text_field_tag :email %>
+      
+      <%= label_tag 'Password' %>
+      <%= password_field_tag :password %>
+      
+      <%= submit_tag 'Login', class: 'btn btn-success' %>
+      
+    <% end %>
+    
+    <h3><center>Don't have an account?</center></h3>
+    <center><%= link_to "Register", register_path, class: "btn btn-danger" %></center>
+
+  </div>
+  <div class="wellhome col-lg-8">
+      <p align="left">
+        <h1>Welcome to NWACHEA of Rogers' Member Management System.</h1>
+        <h2>Using this system you will be able to:
+        <ul style="list-style: none; "align="left">
+          <li>Manage Your Family</li>
+          <li>View Other Member's Info</li>
+          <li>Register For Classes</li>
+        </ul>
+      </p>
+      <p>
+        We hope this system helps make your membership easier to manage.  If you have any suggestions please feel free to let us know!
+      </p>
+    </h2>
+  </div>
+</div>

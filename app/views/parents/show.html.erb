@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="container">
+    <div class="col-md-2 pull-left center">
+    </div>
+    <div class="col-9-lg">
+      <div class="well">
+        <h1><%= @parent.firstname + " " + @parent.lastname %></h1>  
+        <h4>Email Address: <%= mail_to @parent.family.email %></h4>
+        <h4>Phone Number: <%= @parent.phone %>
+        <%= link_to "Edit", edit_parent_path, class: "btn btn-default pull-right" %></h4>
+      </div>
+    </div>
+  </div>
+</div>

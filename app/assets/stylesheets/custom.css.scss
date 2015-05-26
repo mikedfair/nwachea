@@ -1,0 +1,142 @@
+$navbar-default-bg: #7491A3;
+$bgDefault      : #7491a3;
+$bgHighlight    : #002859;
+$colDefault     : #000000;
+$colHighlight   : #ffffff;
+$dropDown       : true;
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+
+.navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus { 
+      color: $colHighlight; }}
+
+.navbar-text {
+    color: $colDefault; }
+
+.navbar-nav {
+  > li {
+    > a {
+      color: $colDefault;
+      &:hover,  &:focus {
+        color: $colHighlight; }}
+    @if $dropDown {
+      > .dropdown-menu {
+        background-color: $bgDefault;
+        > li > a {
+          color: $colDefault;
+          &:hover,  &:focus {
+            color: $colHighlight;
+            background-color: $bgHighlight; }}
+        .divider {
+          background-color: $bgHighlight;}}}
+  }
+  > .active {
+    > a, > a:hover, > a:focus {
+      color: $colHighlight;
+      background-color: $bgHighlight; }}
+  > .open {
+    > a, > a:hover, > a:focus {
+      color: $colHighlight;
+      background-color: $bgHighlight; }}}
+.navbar-toggle {
+  border-color: $bgHighlight;
+  &:hover, &:focus {
+    background-color: $bgHighlight; }
+  .icon-bar {
+    background-color: $colDefault; }}
+
+.navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+
+.navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+      
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+
+body {
+  padding-top: 80px;
+}
+
+.wellhome {
+  padding-right: 20;
+  background-color: #fff;
+  border: 1px;
+  border-color: #E3E3E3;
+}
+
+.wellregister {
+  background-color: #7491A3;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: #666;
+}
+
+h3 {
+  font-size: 1em;
+    color: #fff;
+}
+
+.left {
+  text-align: left;
+  letter-spacing: .5px;
+}
+
+.footer {
+  padding: 15px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.well {
+  background-color: #7491A3;
+}
+
+input, textarea, select, .uneditble-input {
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  width :100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}

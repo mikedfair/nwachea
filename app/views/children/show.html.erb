@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="container">
+    <div class="col-lg-2 pull-left center">
+    </div>
+    <div class="col-9-lg">
+      <div class="well">
+        <h1><%= @child.firstname + " " + @child.lastname %></h1>
+        <h4>Age: <%= @child.age %></h4>
+        <h4>Grade: <%= @child.grade %></h4>
+        <h4>Gender: <%= @child.gender %></h4>
+        <h4>Allergies: <%= @child.allergies %>
+        <%= link_to "Edit", edit_child_path, class: "btn btn-default pull-right" %>
+        <%= link_to "Register", new_reg_path, class: "btn btn-default pull-right" %></h4>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<h1><center>All Families</center></h1>
+<hr/>
+
+<% @families.each do |family| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 well">
+      <h1> <%= link_to family.familyname, family_path(family) %></h1>
+      <h2>Email: <%= mail_to family.email %></h2>
+    </div>
+  </div>
+</div>  
+<% end %>

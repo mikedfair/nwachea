@@ -1,0 +1,18 @@
+<% render 'shared/errors', obj: @parent %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @parent do |f| %>
+      <%= f.label "Parent First Name" %>
+      <%= f.text_field :firstname %>
+
+      <%= f.label "Parent Last Name" %>
+      <%= f.text_field :lastname %>
+      
+      <%= f.label "Phone Number" %>
+      <%= f.text_field :phone %>
+
+      <%= f.submit(@parent.new_record? ? 'Add Parent' : 'Edit Parent', class: "btn btn-success") %>
+    <% end %>
+  </div>
+</div>

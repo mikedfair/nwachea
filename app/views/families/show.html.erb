@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="container">
+    <div class="col-md-2 pull-left center">
+    </div>
+    <div class="col-9-lg">
+      <div class="well">
+        <h1><%= @family.familyname + " Family" %></h1>  
+        <h4>Email Address: <%= mail_to @family.email %>
+        <%= link_to "Edit", edit_family_path, class: "btn btn-default pull-right" %></h4>
+      </div>
+    </div>
+  </div>
+</div>
+<% @family.parents.each do |parent| %>
+  <div class="row">
+    <div class="container">
+    <div class="well col-md-12">
+      <h2> <%= link_to parent.firstname + " " + parent.lastname, parent_path(parent) %></h2>
+        <h4>Phone: <%= parent.phone %></h4>
+        <h4>Email Address: <%= mail_to @family.email %></h4>
+    </div>
+  </div>
+</div>
+<% end %>
+<% @family.children.each do |child| %>
+  <div class="row">
+    <div class="container">
+    <div class="well col-md-12">
+      <h2><%= link_to child.firstname + " " + child.lastname, child_path(child) %></h2>
+      <h4>Age: <%= child.age %></h4>
+      <h4>Grade: <%= child.grade %></h4>
+    </div>
+  </div>
+</div>
+<% end %>

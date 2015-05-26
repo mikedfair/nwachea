@@ -1,0 +1,17 @@
+<h1><center>All Classes</center></h1>
+<hr/>
+
+<% @subjects.each do |subject| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 well">
+      <h2><%= link_to subject.subjectname, subject_path(subject) %></h2>
+      <h4>Grade: <%= subject.grade %></h4>
+      <h4>Hour: <%= subject.hour %></h4>
+      <h4>Cost: <%= subject.cost %></h4>
+      <h4>Teacher: <%= subject.teacher %></h4>
+      <h4>Description: <%= subject.description %></h4>
+    </div>
+  </div>
+</div>  
+<% end %>

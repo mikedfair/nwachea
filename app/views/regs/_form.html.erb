@@ -1,0 +1,33 @@
+<% render 'shared/errors', obj: @reg %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @reg do |f| %>
+      <%= f.label "Student Name" %>
+      <%= f.text_field :student %>
+
+      <h1><center><%= f.label "First Hour" %></center></h1>
+      <hr>
+      <%= f.label "Preferred Class" %>
+      <%= f.collection_select :firstpri, Subject.all, :id, :subjectname %>
+      <%= f.label "Alternate Class" %>
+      <%= f.text_field :firstalt %>
+      
+      <h1><center><%= f.label "Second Hour" %></center></h1>
+      <hr>
+      <%= f.label "Preferred Class" %>
+      <%= f.text_field :secondpri %>
+      <%= f.label "Alternate Class" %>
+      <%= f.text_field :secondalt %>
+      
+      <h1><center><%= f.label "Third Hour" %></center></h1>
+      <hr>
+      <%= f.label "Preferred Class" %>
+      <%= f.text_field :thirdpri %>
+      <%= f.label "Alternate Class" %>
+      <%= f.text_field :thirdalt %>    
+
+      <%= f.submit(@reg.new_record? ? 'Register Student' : 'Edit Student Registration', class: "btn btn-success") %>
+    <% end %>
+  </div>
+</div>

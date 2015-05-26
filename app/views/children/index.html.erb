@@ -1,0 +1,14 @@
+<h1><center>All Classes</center></h1>
+<hr/>
+
+<% @children.each do |child| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 well">
+      <h2><%= link_to child.firstname + " " + child.lastname, child_path(child) %></h2>
+      <h4>Age: <%= child.age %></h4>
+      <h4>Grade: <%= child.grade %></h4>
+    </div>
+  </div>
+</div>  
+<% end %>

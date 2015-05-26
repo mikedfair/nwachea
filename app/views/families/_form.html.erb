@@ -1,0 +1,18 @@
+<% render 'shared/errors', obj: @family %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @family do |f| %>
+      <%= f.label "Family Last Name" %>
+      <%= f.text_field :familyname %>
+
+      <%= f.label "Email Address" %>
+      <%= f.email_field :email %>
+      
+      <%= f.label "Password" %>
+      <%= f.password_field :password %>
+
+      <%= f.submit(@family.new_record? ? 'Register Family' : 'Edit Family', class: "btn btn-success") %>
+    <% end %>
+  </div>
+</div>
