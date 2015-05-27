@@ -5,6 +5,17 @@
     <%= form_for @family do |f| %>
       <%= f.label "Family Last Name" %>
       <%= f.text_field :familyname %>
+      
+      <% if current_user.admin? %>
+        <%= f.label "Management System Admin" %>
+        <%= f.check_box :admin %>
+        
+        <%= f.label "Active Member of NWACHEA" %>
+        <%= f.check_box :active %>
+        
+        <%= f.label "How Involved" %>
+        <%= f.select :typemember, [['Director', 'director'],['Teacher', 'teacher'],['Helper', 'helper']], include_blank: true %>
+      <% end %>
 
       <%= f.label "Email Address" %>
       <%= f.email_field :email %>

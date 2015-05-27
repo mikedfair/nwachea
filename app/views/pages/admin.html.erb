@@ -1,0 +1,58 @@
+<h1>Admin</h1>
+<div class="row">
+  <div class="container">
+    <div class="col-xs-3">
+      <div class="well">
+        <h2 style="color:white">Member Management</h2>
+        <% @families.each do |family| %>
+          <ul style="list-style: none;">
+            <li> <%= link_to family.familyname, family_path(family) %></li>
+          </ul>
+        <% end %>  
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="well">
+        <h2 style="color:white">Class Management</h2>
+        <% @subjects.each do |subject| %>
+          <ul style="list-style: none;">
+            <li><%= link_to subject.subjectname, subject_path(subject) %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="well">
+        <h2 style="color:white"><center>Admin Placeholder</center></h2>
+          <ul style="list-style: none;">
+            <li><%= link_to "Login", login_path %></li>
+            <li><%= link_to "Logout", logout_path %></li>
+            <li><%= link_to "All Familes", families_path %></li>
+            <li><%= link_to "All Parents", parents_path %></li>
+            <li><%= link_to "All Children", children_path %></li>
+            <li><%= link_to "All Classes", subjects_path %></li>
+            <li><%= link_to "Add Family", register_path %></li>
+            <li><%= link_to "Add Parent", new_parent_path %></li>
+            <li><%= link_to "Add Child", new_child_path %></li>
+            <li><%= link_to "Add Class", new_subject_path %></li>
+          </ul>
+      </div>
+    <div class="col-xs-3">
+      <div class="well">
+        <h2 style="color:white"><center>Admin Placeholder</center></h2>
+          <ul style="list-style: none;">
+          <li><%= link_to "Login", login_path %></li>
+          <li><%= link_to "Logout", logout_path %></li>
+          <li><%= link_to "All Familes", families_path %></li>
+          <li><%= link_to "All Parents", parents_path %></li>
+          <li><%= link_to "All Children", children_path %></li>
+          <li><%= link_to "All Classes", subjects_path %></li>
+          <li><%= link_to "Add Family", register_path %></li>
+          <li><%= link_to "Add Parent", new_parent_path %></li>
+          <li><%= link_to "Add Child", new_child_path %></li>
+          <li><%= link_to "Add Class", new_subject_path %></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

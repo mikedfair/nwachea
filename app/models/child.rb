@@ -1,6 +1,6 @@
 class Child < ActiveRecord::Base
   belongs_to :family
-  has_many :regs
+  has_many :regs, dependent: :destroy
   validates :firstname, presence: true
   validates :lastname, presence: true
   validates :age, presence: true

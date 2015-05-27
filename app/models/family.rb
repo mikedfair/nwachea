@@ -1,6 +1,6 @@
 class Family < ActiveRecord::Base
-  has_many :parents
-  has_many :children
+  has_many :parents, dependent: :destroy
+  has_many :children, dependent: :destroy
   before_save { self.email = email.downcase }
   validates :familyname, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i

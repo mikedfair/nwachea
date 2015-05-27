@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525055510) do
+ActiveRecord::Schema.define(version: 20150527114347) do
 
   create_table "children", force: true do |t|
     t.string   "firstname"
@@ -32,14 +32,15 @@ ActiveRecord::Schema.define(version: 20150525055510) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.boolean  "admin",           default: false
+    t.string   "typemember"
+    t.boolean  "active",          default: false
   end
 
   create_table "parents", force: true do |t|
     t.string   "firstname"
     t.string   "lastname"
     t.string   "phone"
-    t.string   "active"
-    t.string   "involvement"
     t.string   "picture"
     t.datetime "created_at"
     t.datetime "updated_at"

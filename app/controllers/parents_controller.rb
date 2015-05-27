@@ -2,6 +2,7 @@ class ParentsController < ApplicationController
   before_action :set_parent, only: [:edit, :update, :show]
   before_action :require_user
   before_action :require_same_user, only: [:edit, :update, :show]
+  before_action :admin_user, only: [:destroy]
   
   def index
     @parents = Parent.all
@@ -41,6 +42,12 @@ class ParentsController < ApplicationController
 
   end
   
+  def destroy
+    Parent.find(params[:id]).destroy
+      flash[:success] = "The Parent has been deleted successfully"
+      redirect_to family_path(current_user)
+  end
+  
   private
   def parent_params
     params.require(:parent).permit(:firstname, :lastname, :phone, :active, :involvement, :picture)
@@ -52,9 +59,13 @@ class ParentsController < ApplicationController
   end
   
   def require_same_user
-    if current_user != @parent.family
+    if current_user != @parent.family and !current_user.admin?
       flash[:danger] = "You can only update your own family members"
       redirect_to root_path
     end
+  end
+  
+  def admin_user
+    redirect_to family_path unless current_user.admin?
   end
 end

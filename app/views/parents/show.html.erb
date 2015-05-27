@@ -7,7 +7,12 @@
         <h1><%= @parent.firstname + " " + @parent.lastname %></h1>  
         <h4>Email Address: <%= mail_to @parent.family.email %></h4>
         <h4>Phone Number: <%= @parent.phone %>
-        <%= link_to "Edit", edit_parent_path, class: "btn btn-default pull-right" %></h4>
+        <% if logged_in? and (@parent.family == current_user || current_user.admin?) %>
+          <%= link_to "Edit", edit_parent_path, class: "btn btn-default pull-right" %></h4>
+        <% end %>
+        <% if current_user.admin? %>
+          <%= link_to "[Delete]", @parent, method: :delete, data: { confirm: "Are You Sure?" } %>
+        <% end %>
       </div>
     </div>
   </div>

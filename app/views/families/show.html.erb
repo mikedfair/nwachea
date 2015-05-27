@@ -6,6 +6,9 @@
       <div class="well">
         <h1><%= @family.familyname + " Family" %></h1>  
         <h4>Email Address: <%= mail_to @family.email %>
+                <% if current_user.admin? %>
+          <h4>Active Member: <%= @family.active %></h4>
+        <% end %>
         <%= link_to "Edit", edit_family_path, class: "btn btn-default pull-right" %></h4>
       </div>
     </div>
